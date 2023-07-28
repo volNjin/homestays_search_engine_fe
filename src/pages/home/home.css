@@ -1,0 +1,8 @@
+.homeContainer {
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 50px 0px 20px 0px;
+}

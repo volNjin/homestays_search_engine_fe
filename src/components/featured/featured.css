@@ -1,0 +1,48 @@
+.featured {
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 1;
+}
+
+.featuredContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.featuredList{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}
+
+.featuredItem {
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 250px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.featuredImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredTitles {
+  cursor: pointer;
+  font-size: 16px;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+  text-shadow: 1px 1px 1px #000;
+  top: 0;
+  width: 100%;
+}

@@ -1,0 +1,113 @@
+.hotel-room {
+    box-sizing: border-box;
+    border: 1px solid rgb(221, 223, 226);
+    width: 100%;
+    padding: 10px;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.hotel-room-name {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0px 0px 10px 0px;
+}
+
+.hotel-room-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.hotel-room-table>th {
+    color: #fff;
+    font-size: 14px;
+    background-color: #4c76b2;
+}
+
+.hotel-room-table>table,
+th,
+td {
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #5bbaff;
+    border-collapse: collapse;
+}
+
+.roomImages {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.roomImgWrapper.small {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.roomImgWrapper {
+    height: 49%;
+}
+
+.roomImgWrapper.large {
+    width: 69%;
+    height: 100%;
+}
+
+.roomImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.roomDetail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.roomHighlightItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.roomPriceContainer {
+    width: 100%;
+    text-align: right;
+}
+
+.roomPrice {
+    color: #ed5c59;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.roomPrice.desc {
+    color: #ed5c59;
+    font-size: 14px;
+}
+
+.roomCapacity.adult {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-family: icons;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 3px;
+    text-decoration: inherit;
+    text-transform: none;
+    vertical-align: middle;
+}

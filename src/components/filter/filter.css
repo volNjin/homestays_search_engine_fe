@@ -1,0 +1,70 @@
+.filter {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e7e7e7;
+}
+
+.filter>h2 {
+    border-bottom: 1px solid #e7e7e7;
+    color: #262626;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.filter.h3 {
+    border: none;
+    margin: 0;
+    color: #262626;
+    font-size: 14px;
+}
+
+.filterItem {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 8px;
+}
+
+.filterItem.price.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: none;
+}
+
+.filterItem.price.searchbox {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.filterItem.price.searchbox>label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.filterItem.price.searchbox>input {
+    border: 1px solid;
+    height: 25px;
+    padding: 0 5px 0 32px;
+    text-align: right;
+    width: 95px;
+    outline-color: #75a8f9;
+}
+
+.filterItem.review,.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1px;
+    overflow: hidden;
+    padding-bottom: 3px;
+    padding-top: 4px;
+}
