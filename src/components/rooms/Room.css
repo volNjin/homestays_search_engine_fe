@@ -74,7 +74,7 @@ td {
     gap: 10px;
 }
 
-.roomHighlightItem {
+.roomFacilityItem {
     display: flex;
     flex-direction: row;
     align-items: center;

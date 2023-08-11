@@ -80,10 +80,10 @@ const Filter = ({
         }
     }
 
-    const handleFilterHighlight = (e) => {
+    const handleFilterFacility = (e) => {
         e.target.checked
-            ? setQueryString((prev) => (prev += `&highlight=${e.target.value}`))
-            : setQueryString(queryString.replace(`&highlight=${e.target.value}`, ''));
+            ? setQueryString((prev) => (prev += `&facility=${e.target.value}`))
+            : setQueryString(queryString.replace(`&facility=${e.target.value}`, ''));
     }
     return (
         <div className='filter'>
@@ -123,7 +123,7 @@ const Filter = ({
                         <input
                             type="checkbox"
                             value={bed}
-                            onChange={(e) => handleFilterHighlight(e)}
+                            onChange={(e) => handleFilterFacility(e)}
                         />
                         <span>{bed}</span>
                     </label>
@@ -136,7 +136,7 @@ const Filter = ({
                         <input
                             type="checkbox"
                             value={view}
-                            onChange={(e) => handleFilterHighlight(e)}
+                            onChange={(e) => handleFilterFacility(e)}
                         />
                         <span>{view}</span>
                     </label>
@@ -149,7 +149,7 @@ const Filter = ({
                         <input
                             type="checkbox"
                             value={facility}
-                            onChange={(e) => handleFilterHighlight(e)}
+                            onChange={(e) => handleFilterFacility(e)}
                         />
                         <span>{facility}</span>
                     </label>

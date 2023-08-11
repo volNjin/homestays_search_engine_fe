@@ -14,6 +14,7 @@ import useFetch from "../../hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import RoomList from "../../components/rooms/RoomList";
 import Footer from "../../components/footer/Footer";
+import Comments from "../../components/comments/Comments";
 
 const Hotel = () => {
   const location = useLocation();
@@ -26,9 +27,6 @@ const Hotel = () => {
     setOpen(true);
   };
   // Function to handle "View More" click
-  const handleViewMore = (i) => {
-    handleOpen(i)
-  };
   const handleMove = (direction) => {
     let newSlideNumber;
 
@@ -112,7 +110,7 @@ const Hotel = () => {
                   {data.top_features?.map((feature, i) => (
                     <div className="hotelTopFeaturesItem">
                       <FontAwesomeIcon icon={faCheck} className="hotelTopFeaturesItem icon" />
-                      <span>{feature}</span>
+                      <span>{feature.content}</span>
                     </div>
                   ))}
                 </div>
@@ -132,6 +130,12 @@ const Hotel = () => {
                 <h3>Thông tin phòng</h3>
                 <RoomList hotelID={id} />
               </div>
+              {data.comments &&
+                <div className="hotelDetailsTexts item">
+                  <h3>Bài đánh giá {data.name}</h3>
+                  <Comments comments={data.comments} />
+                </div>
+              }
             </div>
           </div>
         </div>

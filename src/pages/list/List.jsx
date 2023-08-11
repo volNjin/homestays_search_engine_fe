@@ -1,7 +1,7 @@
 import "./list.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
-import { useLocation } from "react-router-dom";
+import react, { useLocation } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { SearchContext } from '../../context/SearchContext';
 import SearchItem from "../../components/searchItem/SearchItem";
@@ -17,18 +17,18 @@ const List = () => {
   const [min, setMin] = useState("0");
   const [max, setMax] = useState("999.999.999");
   const [queryString, setQueryString] = useState(
-    `/hotels?province=${destination}&adult=${options.adult}&child=${options.children}&room=${options.room}&min=${min || "0"}&max=${max || "999.999.999"}`,
+    `/hotels?city=${destination}&adult=${options.adult}&child=${options.children}&room=${options.room}&min=${min || "0"}&max=${max || "999.999.999"}`,
   );
   const { data, loading, error, reFetch } = useFetch(queryString);
 
   useEffect(() => {
     // Scroll to the top of the page when the component is rendered
     window.scrollTo(0, 0);
-  }, []);
+  });
 
   useEffect(() => {
     setQueryString(
-      `/hotels?province=${destination}&adult=${options.adult}&child=${options.children}&room=${options.room}&min=${min || "0"}&max=${max || "999.999.999"}`,
+      `/hotels?city=${destination}&adult=${options.adult}&child=${options.children}&room=${options.room}&min=${min || "0"}&max=${max || "999.999.999"}`,
     );
   }, [destination, options, min, max]);
   const handleClick = () => {

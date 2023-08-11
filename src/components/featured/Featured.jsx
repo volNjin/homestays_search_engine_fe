@@ -3,7 +3,7 @@ import "./featured.css";
 import { useNavigate } from 'react-router-dom';
 const Featured = () => {
   const navigate = useNavigate();
-  const { data, loading, error } = useFetch("hotels/countByProvince?provinces=Hà Nội,Hồ Chí Minh,Đà Nẵng,Hải Phòng,Thừa Thiên Huế");
+  const { data, loading, error } = useFetch("hotels/countByCity?cities=Hà Nội,Hồ Chí Minh,Đà Nẵng,Hải Phòng,Huế");
   const dummy_featured_1 = [
     {
       src: 'https://q-xx.bstatic.com/xdata/images/city/500x400/688853.jpg?k=f6427c8fccdf777e4bbc75fcd245e7c66204280181bea23350388c76c57348d1&o=',
@@ -30,7 +30,7 @@ const Featured = () => {
     },
     {
       src: 'https://r-xx.bstatic.com/xdata/images/city/500x400/688886.jpg?k=91c47e49d89f3a4c2408a360bbbe8b08d11e35e3d6d253c7efb27b5ca4d40a61&o=',
-      province: 'Thừa Thiên Huế',
+      province: 'Huế',
       propertyCount: data && data[4],
     },
   ];
