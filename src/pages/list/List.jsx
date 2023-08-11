@@ -1,16 +1,14 @@
 import "./list.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
-import react, { useLocation } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
-import { SearchContext } from '../../context/SearchContext';
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
 import Footer from "../../components/footer/Footer";
 import Option from "../../components/header/Option";
 import Filter from "../../components/filter/Filter";
 const List = () => {
-  const { dispatch } = useContext(SearchContext);
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
   const [options, setOptions] = useState(location.state.options);
@@ -32,15 +30,14 @@ const List = () => {
     );
   }, [destination, options, min, max]);
   const handleClick = () => {
-    dispatch &&
-      dispatch({
-        type: 'NEW_SEARCH',
-        payload: { destination, options },
-      });
     reFetch()
   }
   const handleChange = (event) => {
     setDestination(event.target.value);
+  }
+
+  if(error){
+    <p>{error}</p>
   }
   return (
     <div className="mainContainer">

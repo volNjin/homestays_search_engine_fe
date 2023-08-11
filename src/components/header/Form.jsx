@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { SearchContext } from "../../context/SearchContext";
 import Option from "./Option";
 
 const Form = () => {
@@ -19,10 +17,8 @@ const Form = () => {
     });
 
     const navigate = useNavigate();
-    const { dispatch } = useContext(SearchContext);
 
     const handleSearch = () => {
-        dispatch({ type: "NEW_SEARCH", payload: { destination, options } });
         navigate("/hotels", { state: { destination, options } });
     };
     return (
