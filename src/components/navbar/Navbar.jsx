@@ -8,6 +8,7 @@ const Navbar = () => {
         <Link to="/" style={{color:"inherit", textDecoration:"none"}}>
         <span className="logo">JinHomes</span>
         </Link>   
+        <h2>Tìm homestay phù hợp nhu cầu của bạn</h2>
       </div>
     </div>
   )
