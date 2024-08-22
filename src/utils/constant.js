@@ -1,12 +1,8 @@
 const labelKeyword = {
-  room: "Phòng",
-  home: "Nhà",
   location: "Vị trí",
   facility: "Tiện nghi",
-  service: "Dịch vụ",
-  staff: "Nhân viên",
   host: "Chủ nhà",
-  noise: "Tiếng ồn",
+  noise: "Yên tĩnh",
   cleanliness: "Độ sạch sẽ",
 };
 
@@ -15,5 +11,40 @@ const sentimentKeyword = {
   neutral: "Trung bình",
   negative: "Tiêu cực",
 };
+const dump_review = [
+  {
+    rating: "9",
+    review: "Trên cả tuyệt vời",
+  },
+  {
+    rating: "8",
+    review: "Xuất sắc",
+  },
+  {
+    rating: "7",
+    review: "Rất tốt",
+  },
+  {
+    rating: "6",
+    review: "Hài lòng",
+  },
+];
 
-export {labelKeyword, sentimentKeyword}
+const dump_bed = ["Giường đơn", "Giường đôi", "Giường lớn", "Giường tầng"];
+
+const dump_view = [
+  "Vườn",
+  "Thành phố",
+  "Mountain",
+  "River",
+  "Không có cửa sổ",
+];
+
+const dump_room_facilities = [
+  "Vòi sen",
+  "Ban công/sân hiên",
+  "Không hút thuốc",
+  "Cho phép hút thuốc",
+  "Bể bơi riêng",
+];
+export {labelKeyword, sentimentKeyword, dump_bed, dump_review, dump_room_facilities, dump_view}

@@ -6,15 +6,14 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container">
       <Navbar />
       <Header />
       <div className="homeContainer">
         <Featured />
       </div>
       <Footer />
-
-    </div >
+    </div>
   );
 };
 

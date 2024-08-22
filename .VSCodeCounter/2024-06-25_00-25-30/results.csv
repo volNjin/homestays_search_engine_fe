@@ -1,0 +1,53 @@
+"filename", "language", "JSON", "Properties", "Markdown", "HTML", "JavaScript", "JavaScript JSX", "CSS", "comment", "blank", "total"
+"d:\Code\homestays-search-engine\fe\.env", "Properties", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\Code\homestays-search-engine\fe\README.md", "Markdown", 0, 0, 38, 0, 0, 0, 0, 0, 33, 71
+"d:\Code\homestays-search-engine\fe\package-lock.json", "JSON", 28526, 0, 0, 0, 0, 0, 0, 0, 1, 28527
+"d:\Code\homestays-search-engine\fe\package.json", "JSON", 51, 0, 0, 0, 0, 0, 0, 0, 1, 52
+"d:\Code\homestays-search-engine\fe\public\index.html", "HTML", 0, 0, 0, 21, 0, 0, 0, 0, 3, 24
+"d:\Code\homestays-search-engine\fe\src\App.js", "JavaScript", 0, 0, 0, 0, 22, 0, 0, 0, 2, 24
+"d:\Code\homestays-search-engine\fe\src\components\favhomeCard\FavhomeCard.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 106, 0, 0, 10, 116
+"d:\Code\homestays-search-engine\fe\src\components\favhomeCard\favhomeCard.css", "CSS", 0, 0, 0, 0, 0, 0, 32, 0, 4, 36
+"d:\Code\homestays-search-engine\fe\src\components\featured\Featured.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 88, 0, 0, 4, 92
+"d:\Code\homestays-search-engine\fe\src\components\featured\featured.css", "CSS", 0, 0, 0, 0, 0, 0, 43, 0, 5, 48
+"d:\Code\homestays-search-engine\fe\src\components\filter\Filter.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 126, 0, 0, 6, 132
+"d:\Code\homestays-search-engine\fe\src\components\filter\filter.css", "CSS", 0, 0, 0, 0, 0, 0, 63, 0, 8, 71
+"d:\Code\homestays-search-engine\fe\src\components\footer\Footer.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 9, 0, 0, 3, 12
+"d:\Code\homestays-search-engine\fe\src\components\footer\footer.css", "CSS", 0, 0, 0, 0, 0, 0, 13, 0, 0, 13
+"d:\Code\homestays-search-engine\fe\src\components\header\Form.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 50, 0, 0, 4, 54
+"d:\Code\homestays-search-engine\fe\src\components\header\Header.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 14, 0, 0, 2, 16
+"d:\Code\homestays-search-engine\fe\src\components\header\Option.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 96, 0, 0, 1, 97
+"d:\Code\homestays-search-engine\fe\src\components\header\header.css", "CSS", 0, 0, 0, 0, 0, 0, 104, 0, 14, 118
+"d:\Code\homestays-search-engine\fe\src\components\header\option.css", "CSS", 0, 0, 0, 0, 0, 0, 56, 0, 6, 62
+"d:\Code\homestays-search-engine\fe\src\components\navbar\Navbar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 106, 0, 0, 8, 114
+"d:\Code\homestays-search-engine\fe\src\components\navbar\navbar.css", "CSS", 0, 0, 0, 0, 0, 0, 86, 0, 11, 97
+"d:\Code\homestays-search-engine\fe\src\components\reviews\Reviews.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 163, 0, 6, 7, 176
+"d:\Code\homestays-search-engine\fe\src\components\reviews\reviews.css", "CSS", 0, 0, 0, 0, 0, 0, 130, 0, 21, 151
+"d:\Code\homestays-search-engine\fe\src\components\rooms\Room.css", "CSS", 0, 0, 0, 0, 0, 0, 120, 0, 20, 140
+"d:\Code\homestays-search-engine\fe\src\components\rooms\Room.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 162, 0, 4, 5, 171
+"d:\Code\homestays-search-engine\fe\src\components\rooms\RoomList.css", "CSS", 0, 0, 0, 0, 0, 0, 5, 0, 2, 7
+"d:\Code\homestays-search-engine\fe\src\components\rooms\RoomList.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 12, 0, 0, 1, 13
+"d:\Code\homestays-search-engine\fe\src\components\searchItem\SearchItem.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 66, 0, 0, 2, 68
+"d:\Code\homestays-search-engine\fe\src\components\searchItem\searchItem.css", "CSS", 0, 0, 0, 0, 0, 0, 105, 0, 17, 122
+"d:\Code\homestays-search-engine\fe\src\context\SearchContext.js", "JavaScript", 0, 0, 0, 0, 34, 0, 0, 0, 25, 59
+"d:\Code\homestays-search-engine\fe\src\hooks\useFetch.js", "JavaScript", 0, 0, 0, 0, 34, 0, 0, 1, 6, 41
+"d:\Code\homestays-search-engine\fe\src\index.js", "JavaScript", 0, 0, 0, 0, 12, 0, 0, 0, 2, 14
+"d:\Code\homestays-search-engine\fe\src\pages\favhome\Favhome.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 37, 0, 0, 1, 38
+"d:\Code\homestays-search-engine\fe\src\pages\favhome\favhome.css", "CSS", 0, 0, 0, 0, 0, 0, 11, 0, 1, 12
+"d:\Code\homestays-search-engine\fe\src\pages\homepage\Home.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 18, 0, 0, 3, 21
+"d:\Code\homestays-search-engine\fe\src\pages\homepage\home.css", "CSS", 0, 0, 0, 0, 0, 0, 11, 0, 0, 11
+"d:\Code\homestays-search-engine\fe\src\pages\homestay\Homestay.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 236, 0, 0, 7, 243
+"d:\Code\homestays-search-engine\fe\src\pages\homestay\homestay.css", "CSS", 0, 0, 0, 0, 0, 0, 225, 0, 37, 262
+"d:\Code\homestays-search-engine\fe\src\pages\list\List.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 93, 0, 5, 10, 108
+"d:\Code\homestays-search-engine\fe\src\pages\list\list.css", "CSS", 0, 0, 0, 0, 0, 0, 94, 0, 16, 110
+"d:\Code\homestays-search-engine\fe\src\pages\login\Login.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 118, 0, 0, 13, 131
+"d:\Code\homestays-search-engine\fe\src\pages\login\login.css", "CSS", 0, 0, 0, 0, 0, 0, 171, 1, 8, 180
+"d:\Code\homestays-search-engine\fe\src\pages\register\Register.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 138, 0, 0, 13, 151
+"d:\Code\homestays-search-engine\fe\src\pages\register\register.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"d:\Code\homestays-search-engine\fe\src\services\homeService.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 11, 0, 0, 1, 12
+"d:\Code\homestays-search-engine\fe\src\services\http\baseUrl.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 1, 0, 0, 1, 2
+"d:\Code\homestays-search-engine\fe\src\services\http\privateHttp.config.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 34, 0, 0, 6, 40
+"d:\Code\homestays-search-engine\fe\src\services\http\publicHttp.config.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 9, 0, 0, 3, 12
+"d:\Code\homestays-search-engine\fe\src\services\userService.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 63, 0, 0, 2, 65
+"d:\Code\homestays-search-engine\fe\src\utils\constant.js", "JavaScript", 0, 0, 0, 0, 46, 0, 0, 0, 4, 50
+"d:\Code\homestays-search-engine\fe\src\utils\token.js", "JavaScript", 0, 0, 0, 0, 27, 0, 0, 6, 8, 41
+"Total", "-", 28577, 1, 38, 21, 175, 1756, 1269, 23, 369, 32229

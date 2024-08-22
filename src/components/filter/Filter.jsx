@@ -1,44 +1,8 @@
 import React, { useState } from "react";
 import "./filter.css";
-
+import { dump_bed, dump_review, dump_room_facilities, dump_view } from "../../utils/constant";
 const Filter = ({ min, max, setMin, setMax, queryString, setQueryString }) => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const dump_review = [
-    {
-      rating: "9",
-      review: "Trên cả tuyệt vời",
-    },
-    {
-      rating: "8",
-      review: "Xuất sắc",
-    },
-    {
-      rating: "7",
-      review: "Rất tốt",
-    },
-    {
-      rating: "6",
-      review: "Hài lòng",
-    },
-  ];
-
-  const dump_bed = ["Giường đơn", "Giường đôi", "Giường lớn", "Giường tầng"];
-
-  const dump_view = [
-    "Vườn",
-    "Thành phố",
-    "Mountain",
-    "River",
-    "Không có cửa sổ",
-  ];
-
-  const dump_room_facilities = [
-    "Vòi sen",
-    "Ban công/sân hiên",
-    "Không hút thuốc",
-    "Cho phép hút thuốc",
-    "Bể bơi riêng",
-  ];
 
   const format = (inputValue) => {
     const withoutDots = inputValue.replace(/\./g, "");
@@ -61,7 +25,7 @@ const Filter = ({ min, max, setMin, setMax, queryString, setQueryString }) => {
     setMax(format(e.target.value));
   };
   const handleInputFocus = (e) => {
-    e.target.select(); 
+    e.target.select();
   };
 
   const handleFilterReview = (e) => {
@@ -83,7 +47,6 @@ const Filter = ({ min, max, setMin, setMax, queryString, setQueryString }) => {
   };
   return (
     <div className="filter">
-      <h2>Bộ lọc:</h2>
       <div className="filterItem">
         <h3 className="filter h3">Giá mỗi đêm</h3>
         <div className="filterItem price box">

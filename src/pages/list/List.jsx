@@ -15,7 +15,7 @@ const List = () => {
   const [min, setMin] = useState("0");
   const [max, setMax] = useState("999.999.999");
   const [queryString, setQueryString] = useState(
-    `/hotels?city=${destination}&adult=${options.adult}&child=${
+    `${process.env.REACT_APP_API_ENDPOINT}/hotels?city=${destination}&adult=${options.adult}&child=${
       options.children
     }&room=${options.room}&min=${min || "0"}&max=${max || "999.999.999"}`
   );
@@ -28,7 +28,7 @@ const List = () => {
 
   useEffect(() => {
     setQueryString(
-      `/hotels?city=${destination}&adult=${options.adult}&child=${
+      `${process.env.REACT_APP_API_ENDPOINT}/hotels?city=${destination}&adult=${options.adult}&child=${
         options.children
       }&room=${options.room}&min=${min || "0"}&max=${max || "999.999.999"}`
     );

@@ -38,4 +38,3 @@ const useFetch = (url) => {
 
 export default useFetch;
 
-// if we make a API request at first loading is set true and fetched data will get store in 'data' and errors in 'error'.

@@ -1,6 +1,5 @@
 .mainContainer {
   display: flex;
-  flex: 1;
   flex-direction: column;
   height: 100%;
 }
@@ -8,13 +7,13 @@
 .listContainer {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 25px;
   min-height: 575px;
 }
 
 .listWrapper {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1200px;
   display: flex;
   gap: 20px;
 }

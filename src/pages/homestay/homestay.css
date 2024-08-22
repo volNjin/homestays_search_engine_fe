@@ -1,11 +1,11 @@
-.hotelContainer {
+.homestayContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
 }
 
-.hotelWrapper {
+.homestayWrapper {
   width: 100%;
   max-width: 1140px;
   display: flex;
@@ -14,37 +14,66 @@
   position: relative;
 }
 
-.hotelTitle {
+.homestayInfo {
+  border: 1px solid rgb(221, 223, 226);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.homestayCommonInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homestayCommonInfoLeftChild {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.homestayCommonInfoRightChild {
+  display: flex;
+  flex-direction: row;
+  right: 0;
+  align-items: center;
+}
+
+.homestayTitle {
   font-size: 24px;
 }
 
-.hotelAddress {
+.homestayAddress {
   font-size: 12px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.hotelDistance {
+.homestayDistance {
   color: #0071c2;
   font-weight: 500;
 }
 
-.hotelPriceHighlight {
+.homestayPriceHighlight {
   color: #008009;
   font-weight: 500;
 }
 
-.hotelImages {
+.homestayImages {
   height: 305px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   border: 1px solid rgb(221, 223, 226);
+  border-radius: 10px;
   padding: 10px;
 }
 
-.hotelImgWrapperSmall {
+.homestayImgWrapperSmall {
   width: 60%;
   height: 305px;
   display: flex;
@@ -53,48 +82,49 @@
   align-content: space-between;
 }
 
-.hotelImgWrapper {
+.homestayImgWrapper {
   width: 33%;
   height: 150px;
 }
 
-.hotelImgWrapper.large {
+.homestayImgWrapper.large {
   width: 39.5%;
   height: 100%;
 }
 
-.hotelImg {
+.homestayImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+  border-radius: 10px;
 }
 
-.hotelDetails {
+.homestayDetails {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-.hotelDetailsTexts {
+.homestayDetailsTexts {
   flex: 3;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.hotelDetailsTexts.item {
+.homestayDetailsTexts.item {
   border-top: 1px solid rgb(221, 223, 226);
   padding-top: 10px;
   font-size: 16px;
 }
 
-.hotelDesc {
+.homestayDesc {
   font-size: 14px;
   font-family: mallory, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-.hotelTopFeatures {
+.homestayTopFeatures {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -102,13 +132,13 @@
   justify-content: space-between;
 }
 
-.hotelTopFeaturesGrid {
+.homestayTopFeaturesGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5px;
 }
 
-.hotelTopFeaturesItem {
+.homestayTopFeaturesItem {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -116,11 +146,11 @@
   font-family: mallory, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-.hotelTopFeaturesItem.icon {
+.homestayTopFeaturesItem.icon {
   color: #008009;
 }
 
-.hotelDetailsPrice {
+.homestayDetailsPrice {
   flex: 1;
   background-color: #ebf3ff;
   padding: 20px;
@@ -129,20 +159,20 @@
   gap: 20px;
 }
 
-.hotelDetailsPrice>h1 {
+.homestayDetailsPrice>h1 {
   font-size: 18px;
   color: #555;
 }
 
-.hotelDetailsPrice>span {
+.homestayDetailsPrice>span {
   font-size: 14px;
 }
 
-.hotelDetailsPrice>h2 {
+.homestayDetailsPrice>h2 {
   font-weight: 300;
 }
 
-.hotelDetailsPrice>button {
+.homestayDetailsPrice>button {
   border: none;
   padding: 10px 20px;
   background-color: #0071c2;
@@ -153,34 +183,49 @@
 }
 
 .slider {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.613);
+  background-color: rgba(0, 0, 0, 0.41);
   z-index: 999;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .sliderWrapper {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+}
+
+.sliderImgWrapper {
+  height: 70vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
 
 .sliderImg {
   height: 100%;
-  width: 100%;
+  width: auto;
+  border-radius: 10px;
+  user-select: none;
 }
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 50px;
+  right: 90px;
   font-size: 30px;
   color: lightgray;
   cursor: pointer;
@@ -191,4 +236,27 @@
   font-size: 50px;
   color: lightgray;
   cursor: pointer;
+}
+
+.review-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.heart-plus {
+  height: 35px;
+  width: 35px;
+  color: red;
+}
+
+.heart-plus:hover {
+  cursor: pointer;
+}
+
+.add-favhome-button {
+  background: transparent;
+  border: none;
 }

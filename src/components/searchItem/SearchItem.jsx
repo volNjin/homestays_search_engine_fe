@@ -9,7 +9,7 @@ const SearchItem = ({ item }) => {
       <div className="siDesc">
         <h1 className="siTitle">{item.homename}</h1>
         <div className="hotelAddress">
-          <FontAwesomeIcon icon={faLocationDot} />
+          <FontAwesomeIcon icon={faLocationDot} />{" "}
           <span>{item.address}</span>
         </div>
         <span className="siFeatures">
@@ -52,11 +52,11 @@ const SearchItem = ({ item }) => {
           {item.cheapest_prices.traveloka && (
             <div className="siPrices">
               Traveloka
-              <span className="siPrice">{item.cheapest_prices.traveloka}₫</span>
+              <span className="siPrice">{item.cheapest_prices.traveloka.split(" ")[0]}₫</span>
             </div>
           )}
         </div>
-        <Link to={`/homes/${item._id}`}>
+        <Link to={`/home/${item._id}`}>
           <button className="siCheckButton">Chi tiết</button>
         </Link>
       </div>

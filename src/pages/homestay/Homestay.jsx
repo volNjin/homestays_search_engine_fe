@@ -10,67 +10,54 @@ import {
   faCircleXmark,
   faLocationDot,
   faCheck,
+  faHeartCirclePlus,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+  Button,
+} from "@mui/material";
+import { useState, useEffect} from "react";
 import useFetch from "../../hooks/useFetch";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import RoomList from "../../components/rooms/RoomList";
 import Footer from "../../components/footer/Footer";
 import Reviews from "../../components/reviews/Reviews";
-import { labelKeyword, sentimentKeyword } from "../../utils/constant";
-
-const Hotel = () => {
+import USER from "../../services/userService";
+import { toast } from "react-toastify";
+const Homestay = () => {
   const location = useLocation();
-  const id = location.pathname.split("/")[2]; //fetching hotel id from path
+  localStorage.setItem("currentPath", location.pathname);
+  const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
-  const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  const { data, loading, error } = useFetch(
+    `${process.env.REACT_APP_API_ENDPOINT}/hotels/find/${id}`
+  );
+  const [siteReviews, setSiteReviews] = useState("");
+  const [showLoginRequest, setShowLoginRequest] = useState(false);
+  const userId = localStorage.getItem("id");
+  const navigate = useNavigate();
+  useEffect(() => {
+    const initialSiteReviews = (() => {
+      if (data?.reviews?.agoda.length > 0) {
+        return "agoda";
+      } else if (data?.reviews?.booking.length > 0) {
+        return "booking";
+      } else if (data?.reviews?.traveloka.length > 0) {
+        return "traveloka";
+      } else {
+        return ""; // Default value if none of the conditions are met
+      }
+    })();
+    setSiteReviews(initialSiteReviews);
+  }, [data]);
 
-  const [website, setWebsite] = useState("agoda");
-  const [label, setLabel] = useState();
-  const [sentiment, setSentiment] = useState();
-  const combinedReviews = [];
-  if (data?.reviews) {
-    // Combine reviews from agoda
-    combinedReviews.push(
-      ...(data.reviews.agoda?.map((review) => ({
-        ...review,
-        website: "Agoda",
-      })) || {})
-    );
-
-    // Combine reviews from booking
-    combinedReviews.push(
-      ...(data.reviews.booking?.map((review) => ({
-        ...review,
-        website: "Booking",
-      })) || {})
-    );
-
-    // Combine reviews from traveloka
-    combinedReviews.push(
-      ...(data.reviews.traveloka?.map((review) => ({
-        ...review,
-        website: "Traveloka",
-      })) || {})
-    );
-  }
-  const filteredReviews = combinedReviews.filter((review) => {
-    return (
-      (!label || review.label?.toLowerCase().includes(label.toLowerCase())) &&
-      (!sentiment || review.sentiment === sentiment)
-    );
-  });
-
-  const handleChangeLabel = (event, label) => {
-    setLabel(label);
-  };
-  const handleChangeSentiment = (event, sentiment) => {
-    setSentiment(sentiment);
-  };
-
-  const handleChange = (event, site) => {
-    setWebsite(site);
+  const handleChangeReviews = (event, site) => {
+    if (site !== null) setSiteReviews(site);
   };
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -88,158 +75,211 @@ const Hotel = () => {
 
     setSlideNumber(newSlideNumber);
   };
+  const addFavhome = async () => {
+    try {
+      await USER.addFavhome({
+        user_id: userId,
+        homename: data.homename,
+        homephoto: data.images[0],
+      });
+      toast.success("Đã thêm home yêu thích");
+    } catch (error) {
+      if (error?.response?.data?.message === "No token provided!") {
+        setShowLoginRequest(true);
+      }
+    }
+  };
+  const handleCancel = () => {
+    setShowLoginRequest(false);
+  };
+  const handleConfirm = () => {
+    navigate("/signin");
+  };
   if (error) {
     return <div>{error}</div>;
   }
-
   return (
     <div>
       <Navbar />
-      <Header type="list" />
+      <Header />
       {loading ? (
         "loading"
       ) : (
-        <div className="hotelContainer">
+        <div className="homestayContainer">
           {open && (
             <div className="slider">
-              <FontAwesomeIcon
-                icon={faCircleXmark}
-                className="close"
-                onClick={() => setOpen(false)}
-              />
-              <FontAwesomeIcon
-                icon={faCircleArrowLeft}
-                className="arrow"
-                onClick={() => handleMove("l")}
-              />
               <div className="sliderWrapper">
-                <img
-                  src={data.images[slideNumber]}
-                  alt=""
-                  className="sliderImg"
+                <FontAwesomeIcon
+                  icon={faCircleXmark}
+                  className="close"
+                  onClick={() => setOpen(false)}
+                />
+                <FontAwesomeIcon
+                  icon={faCircleArrowLeft}
+                  className="arrow"
+                  onClick={() => handleMove("l")}
+                />
+                <div className="sliderImgWrapper">
+                  <img
+                    src={data.images[slideNumber]}
+                    alt=""
+                    className="sliderImg"
+                  />
+                </div>
+                <FontAwesomeIcon
+                  icon={faCircleArrowRight}
+                  className="arrow"
+                  onClick={() => handleMove("r")}
                 />
               </div>
-              <FontAwesomeIcon
-                icon={faCircleArrowRight}
-                className="arrow"
-                onClick={() => handleMove("r")}
-              />
             </div>
           )}
-          <div className="hotelWrapper">
+          <div className="homestayWrapper">
             {data.images && (
-              <div className="hotelImages">
-                <div className="hotelImgWrapper large" key={0}>
+              <div className="homestayImages">
+                <div className="homestayImgWrapper large" key={0}>
                   <img
                     onClick={() => handleOpen(0)}
                     src={data.images[0]}
                     alt=""
-                    className="hotelImg"
+                    className="homestayImg"
                   />
                 </div>
-                <div className="hotelImgWrapperSmall">
-                  {data.images?.slice(1).map((photo, i) => (
-                    <div className="hotelImgWrapper" key={i}>
+                <div className="homestayImgWrapperSmall">
+                  {data.images?.slice(1, 7).map((photo, i) => (
+                    <div className="homestayImgWrapper" key={i}>
                       <img
                         onClick={() => handleOpen(i)}
                         src={photo}
                         alt=""
-                        className="hotelImg"
+                        className="homestayImg"
                       />
                     </div>
                   ))}
                 </div>
               </div>
             )}
-            <h1 className="hotelTitle">{data.homename}</h1>
-            <div className="hotelAddress">
-              <FontAwesomeIcon icon={faLocationDot} />
-              <span>{data.address}</span>
-            </div>
-            <div className="hotelDetails">
-              <div className="hotelDetailsTexts">
-                <div className="hotelDetailsTexts item">
-                  <p className="hotelDesc">{data.description}</p>
-                </div>
-                <div className="hotelDetailsTexts item">
-                  <h3>Tiện nghi</h3>
-                  <div className="hotelTopFeaturesGrid">
-                    {data.property_highlights?.map((facility, i) => (
-                      <div className="hotelTopFeaturesItem">
-                        <FontAwesomeIcon
-                          icon={faCheck}
-                          className="hotelTopFeaturesItem icon"
-                        />
-                        <span>{facility}</span>
-                      </div>
-                    ))}
+            <div className="homestayInfo">
+              <div className="homestayCommonInfo">
+                <div className="homestayCommonInfoLeftChild">
+                  <h1 className="homestayTitle">{data.homename}</h1>
+                  <div className="homestayAddress">
+                    <FontAwesomeIcon icon={faLocationDot} />
+                    <span>{data.address}</span>
                   </div>
                 </div>
-                {data.rooms && (
-                  <div className="hotelDetailsTexts item">
-                    <h3>Thông tin phòng</h3>
-                    <ToggleButtonGroup
-                      color="primary"
-                      value={website}
-                      exclusive
-                      onChange={handleChange}
-                      aria-label="Website"
-                    >
-                      {data?.rooms?.agoda.length > 0 && (
-                        <ToggleButton value="agoda">Agoda</ToggleButton>
-                      )}
-                      {data?.rooms?.booking.length > 0 && (
-                        <ToggleButton value="booking">Booking</ToggleButton>
-                      )}
-                      {data?.rooms?.traveloka.length > 0 && (
-                        <ToggleButton value="traveloka">Traveloka</ToggleButton>
-                      )}
-                    </ToggleButtonGroup>
-                    <RoomList site={website} rooms={data.rooms[website]} />
+                <div className="homestayCommonInfoRightChild">
+                  <p>Nhấn</p>
+                  <button
+                    className="add-favhome-button"
+                    onClick={() => addFavhome()}
+                  >
+                    <FontAwesomeIcon
+                      icon={faHeartCirclePlus}
+                      className="heart-plus"
+                    />
+                  </button>
+                  <p>để thêm yêu thích</p>
+                </div>
+              </div>
+              <div className="homestayDetails">
+                <div className="homestayDetailsTexts">
+                  <div className="homestayDetailsTexts item">
+                    <p className="homestayDesc">{data.description}</p>
                   </div>
-                )}
-                {data.reviews && (
-                  <div className="hotelDetailsTexts item">
-                    <h3>Bài đánh giá {data.homename}</h3>
-                    <h4>Hạng mục:</h4>
-                    <ToggleButtonGroup
-                      color="success"
-                      value={label}
-                      exclusive
-                      onChange={handleChangeLabel}
-                      aria-label="Label"
-                    >
-                      {Object.entries(labelKeyword).map(([key, value]) => (
-                        <ToggleButton value={key}>{value}</ToggleButton>
+                  <div className="homestayDetailsTexts item">
+                    <h3>Tiện nghi</h3>
+                    <div className="homestayTopFeaturesGrid">
+                      {data.property_highlights?.map((facility, i) => (
+                        <div className="homestayTopFeaturesItem">
+                          <FontAwesomeIcon
+                            icon={faCheck}
+                            className="homestayTopFeaturesItem icon"
+                          />
+                          <span>{facility}</span>
+                        </div>
                       ))}
-                    </ToggleButtonGroup>
-                    <h4>Phản ứng của người đánh giá:</h4>
-                    <ToggleButtonGroup
-                      color="success"
-                      value={sentiment}
-                      exclusive
-                      onChange={handleChangeSentiment}
-                      aria-label="Sentiment"
-                    >
-                      {Object.entries(sentimentKeyword).map(([key, value]) => (
-                        <ToggleButton value={key}>{value}</ToggleButton>
-                      ))}
-                    </ToggleButtonGroup>
-                    {filteredReviews.length > 0 ? (
-                      <Reviews reviews={filteredReviews} />
-                    ) : (
-                      <span>Không có đánh giá</span>
-                    )}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             </div>
+            {data.rooms && (
+              <div className="homestayDetailsTexts item">
+                <h3>Thông tin phòng</h3>
+                {data.rooms.length > 0 ? (
+                  <RoomList rooms={data.rooms} urls={data.urls} />
+                ) : (
+                  <span>Không có phòng trên các nền tảng nguồn</span>
+                )}
+              </div>
+            )}
+            {data.reviews && (
+              <div className="homestayDetailsTexts item">
+                <h3>Đánh giá {data.homename}</h3>
+                <div className="review-toggle">
+                  <ToggleButtonGroup
+                    color="primary"
+                    value={siteReviews}
+                    exclusive
+                    onChange={handleChangeReviews}
+                    aria-label="site"
+                  >
+                    {data?.reviews?.agoda.length > 0 && (
+                      <ToggleButton value="agoda">Agoda</ToggleButton>
+                    )}
+                    {data?.reviews?.booking.length > 0 && (
+                      <ToggleButton value="booking">Booking</ToggleButton>
+                    )}
+                    {data?.reviews?.traveloka.length > 0 && (
+                      <ToggleButton value="traveloka">Traveloka</ToggleButton>
+                    )}
+                  </ToggleButtonGroup>
+                  {data?.reviews[siteReviews]?.length > 0 ? (
+                    <div className="siRating">
+                      <button>{data.ratings[siteReviews]}</button>
+
+                      <span>{data.reviews[siteReviews].length} đánh giá</span>
+                    </div>
+                  ) : (
+                    <span>Không có đánh giá</span>
+                  )}
+                </div>
+                {data?.reviews[siteReviews]?.length > 0 && (
+                  <Reviews
+                    site={siteReviews}
+                    reviews={data.reviews[siteReviews]}
+                  />
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}
+      <Dialog
+        open={showLoginRequest}
+        onClose={handleCancel}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Yêu cầu đăng nhập"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Bạn cần đăng nhập để sử dụng chức năng này
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancel} color="primary">
+            Hủy
+          </Button>
+          <Button onClick={handleConfirm} color="error" autoFocus>
+            Đồng ý
+          </Button>
+        </DialogActions>
+      </Dialog>
       <Footer />
     </div>
   );
 };
 
-export default Hotel;
+export default Homestay;

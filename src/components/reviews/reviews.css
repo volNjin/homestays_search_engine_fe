@@ -1,3 +1,35 @@
+.linear-bars {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    height: 100%;
+    gap: 1.5rem;
+}
+
+.linear-bars.item {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.linear-bars.item.title {
+    flex-direction: row;
+    width: 100%;
+    padding: auto;
+    justify-content: space-between;
+}
+
+.linear-bar {
+    background-color: #f2f2f2;
+    height: 8px;
+    border-radius: 999px;
+}
+
+.linear-bar.percent {
+    background-color: #003580;
+    display: block;
+}
+
 .reviews-container {
     display: flex;
     flex-direction: column;
@@ -110,6 +142,7 @@
     color: #999;
     line-height: 40px;
 }
+
 .pagination-container {
     display: flex;
     width: 100%;

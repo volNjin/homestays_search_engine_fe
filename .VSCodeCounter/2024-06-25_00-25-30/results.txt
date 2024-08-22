@@ -1,0 +1,108 @@
+Date : 2024-06-25 00:25:30
+Directory : d:\Code\homestays-search-engine\fe
+Total : 51 files,  31837 codes, 23 comments, 369 blanks, all 32229 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          2 |     28,577 |          0 |          2 |     28,579 |
+| JavaScript JSX |         23 |      1,756 |         15 |        113 |      1,884 |
+| CSS            |         17 |      1,269 |          1 |        171 |      1,441 |
+| JavaScript     |          6 |        175 |          7 |         47 |        229 |
+| Markdown       |          1 |         38 |          0 |         33 |         71 |
+| HTML           |          1 |         21 |          0 |          3 |         24 |
+| Properties     |          1 |          1 |          0 |          0 |          1 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                          | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                             |         51 |     31,837 |         23 |        369 |     32,229 |
+| . (Files)                                                                     |          4 |     28,616 |          0 |         35 |     28,651 |
+| public                                                                        |          1 |         21 |          0 |          3 |         24 |
+| src                                                                           |         46 |      3,200 |         23 |        331 |      3,554 |
+| src (Files)                                                                   |          2 |         34 |          0 |          4 |         38 |
+| src\components                                                                |         23 |      1,755 |         10 |        161 |      1,926 |
+| src\components\favhomeCard                                                    |          2 |        138 |          0 |         14 |        152 |
+| src\components\featured                                                       |          2 |        131 |          0 |          9 |        140 |
+| src\components\filter                                                         |          2 |        189 |          0 |         14 |        203 |
+| src\components\footer                                                         |          2 |         22 |          0 |          3 |         25 |
+| src\components\header                                                         |          5 |        320 |          0 |         27 |        347 |
+| src\components\navbar                                                         |          2 |        192 |          0 |         19 |        211 |
+| src\components\reviews                                                        |          2 |        293 |          6 |         28 |        327 |
+| src\components\rooms                                                          |          4 |        299 |          4 |         28 |        331 |
+| src\components\searchItem                                                     |          2 |        171 |          0 |         19 |        190 |
+| src\context                                                                   |          1 |         34 |          0 |         25 |         59 |
+| src\hooks                                                                     |          1 |         34 |          1 |          6 |         41 |
+| src\pages                                                                     |         12 |      1,152 |          6 |        110 |      1,268 |
+| src\pages\favhome                                                             |          2 |         48 |          0 |          2 |         50 |
+| src\pages\homepage                                                            |          2 |         29 |          0 |          3 |         32 |
+| src\pages\homestay                                                            |          2 |        461 |          0 |         44 |        505 |
+| src\pages\list                                                                |          2 |        187 |          5 |         26 |        218 |
+| src\pages\login                                                               |          2 |        289 |          1 |         21 |        311 |
+| src\pages\register                                                            |          2 |        138 |          0 |         14 |        152 |
+| src\services                                                                  |          5 |        118 |          0 |         13 |        131 |
+| src\services (Files)                                                          |          2 |         74 |          0 |          3 |         77 |
+| src\services\http                                                             |          3 |         44 |          0 |         10 |         54 |
+| src\utils                                                                     |          2 |         73 |          6 |         12 |         91 |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                      | language       | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| d:\Code\homestays-search-engine\fe\.env                                       | Properties     |          1 |          0 |          0 |          1 |
+| d:\Code\homestays-search-engine\fe\README.md                                  | Markdown       |         38 |          0 |         33 |         71 |
+| d:\Code\homestays-search-engine\fe\package-lock.json                          | JSON           |     28,526 |          0 |          1 |     28,527 |
+| d:\Code\homestays-search-engine\fe\package.json                               | JSON           |         51 |          0 |          1 |         52 |
+| d:\Code\homestays-search-engine\fe\public\index.html                          | HTML           |         21 |          0 |          3 |         24 |
+| d:\Code\homestays-search-engine\fe\src\App.js                                 | JavaScript     |         22 |          0 |          2 |         24 |
+| d:\Code\homestays-search-engine\fe\src\components\favhomeCard\FavhomeCard.jsx | JavaScript JSX |        106 |          0 |         10 |        116 |
+| d:\Code\homestays-search-engine\fe\src\components\favhomeCard\favhomeCard.css | CSS            |         32 |          0 |          4 |         36 |
+| d:\Code\homestays-search-engine\fe\src\components\featured\Featured.jsx       | JavaScript JSX |         88 |          0 |          4 |         92 |
+| d:\Code\homestays-search-engine\fe\src\components\featured\featured.css       | CSS            |         43 |          0 |          5 |         48 |
+| d:\Code\homestays-search-engine\fe\src\components\filter\Filter.jsx           | JavaScript JSX |        126 |          0 |          6 |        132 |
+| d:\Code\homestays-search-engine\fe\src\components\filter\filter.css           | CSS            |         63 |          0 |          8 |         71 |
+| d:\Code\homestays-search-engine\fe\src\components\footer\Footer.jsx           | JavaScript JSX |          9 |          0 |          3 |         12 |
+| d:\Code\homestays-search-engine\fe\src\components\footer\footer.css           | CSS            |         13 |          0 |          0 |         13 |
+| d:\Code\homestays-search-engine\fe\src\components\header\Form.jsx             | JavaScript JSX |         50 |          0 |          4 |         54 |
+| d:\Code\homestays-search-engine\fe\src\components\header\Header.jsx           | JavaScript JSX |         14 |          0 |          2 |         16 |
+| d:\Code\homestays-search-engine\fe\src\components\header\Option.jsx           | JavaScript JSX |         96 |          0 |          1 |         97 |
+| d:\Code\homestays-search-engine\fe\src\components\header\header.css           | CSS            |        104 |          0 |         14 |        118 |
+| d:\Code\homestays-search-engine\fe\src\components\header\option.css           | CSS            |         56 |          0 |          6 |         62 |
+| d:\Code\homestays-search-engine\fe\src\components\navbar\Navbar.jsx           | JavaScript JSX |        106 |          0 |          8 |        114 |
+| d:\Code\homestays-search-engine\fe\src\components\navbar\navbar.css           | CSS            |         86 |          0 |         11 |         97 |
+| d:\Code\homestays-search-engine\fe\src\components\reviews\Reviews.jsx         | JavaScript JSX |        163 |          6 |          7 |        176 |
+| d:\Code\homestays-search-engine\fe\src\components\reviews\reviews.css         | CSS            |        130 |          0 |         21 |        151 |
+| d:\Code\homestays-search-engine\fe\src\components\rooms\Room.css              | CSS            |        120 |          0 |         20 |        140 |
+| d:\Code\homestays-search-engine\fe\src\components\rooms\Room.jsx              | JavaScript JSX |        162 |          4 |          5 |        171 |
+| d:\Code\homestays-search-engine\fe\src\components\rooms\RoomList.css          | CSS            |          5 |          0 |          2 |          7 |
+| d:\Code\homestays-search-engine\fe\src\components\rooms\RoomList.jsx          | JavaScript JSX |         12 |          0 |          1 |         13 |
+| d:\Code\homestays-search-engine\fe\src\components\searchItem\SearchItem.jsx   | JavaScript JSX |         66 |          0 |          2 |         68 |
+| d:\Code\homestays-search-engine\fe\src\components\searchItem\searchItem.css   | CSS            |        105 |          0 |         17 |        122 |
+| d:\Code\homestays-search-engine\fe\src\context\SearchContext.js               | JavaScript     |         34 |          0 |         25 |         59 |
+| d:\Code\homestays-search-engine\fe\src\hooks\useFetch.js                      | JavaScript     |         34 |          1 |          6 |         41 |
+| d:\Code\homestays-search-engine\fe\src\index.js                               | JavaScript     |         12 |          0 |          2 |         14 |
+| d:\Code\homestays-search-engine\fe\src\pages\favhome\Favhome.jsx              | JavaScript JSX |         37 |          0 |          1 |         38 |
+| d:\Code\homestays-search-engine\fe\src\pages\favhome\favhome.css              | CSS            |         11 |          0 |          1 |         12 |
+| d:\Code\homestays-search-engine\fe\src\pages\homepage\Home.jsx                | JavaScript JSX |         18 |          0 |          3 |         21 |
+| d:\Code\homestays-search-engine\fe\src\pages\homepage\home.css                | CSS            |         11 |          0 |          0 |         11 |
+| d:\Code\homestays-search-engine\fe\src\pages\homestay\Homestay.jsx            | JavaScript JSX |        236 |          0 |          7 |        243 |
+| d:\Code\homestays-search-engine\fe\src\pages\homestay\homestay.css            | CSS            |        225 |          0 |         37 |        262 |
+| d:\Code\homestays-search-engine\fe\src\pages\list\List.jsx                    | JavaScript JSX |         93 |          5 |         10 |        108 |
+| d:\Code\homestays-search-engine\fe\src\pages\list\list.css                    | CSS            |         94 |          0 |         16 |        110 |
+| d:\Code\homestays-search-engine\fe\src\pages\login\Login.jsx                  | JavaScript JSX |        118 |          0 |         13 |        131 |
+| d:\Code\homestays-search-engine\fe\src\pages\login\login.css                  | CSS            |        171 |          1 |          8 |        180 |
+| d:\Code\homestays-search-engine\fe\src\pages\register\Register.jsx            | JavaScript JSX |        138 |          0 |         13 |        151 |
+| d:\Code\homestays-search-engine\fe\src\pages\register\register.css            | CSS            |          0 |          0 |          1 |          1 |
+| d:\Code\homestays-search-engine\fe\src\services\homeService.jsx               | JavaScript JSX |         11 |          0 |          1 |         12 |
+| d:\Code\homestays-search-engine\fe\src\services\http\baseUrl.jsx              | JavaScript JSX |          1 |          0 |          1 |          2 |
+| d:\Code\homestays-search-engine\fe\src\services\http\privateHttp.config.jsx   | JavaScript JSX |         34 |          0 |          6 |         40 |
+| d:\Code\homestays-search-engine\fe\src\services\http\publicHttp.config.jsx    | JavaScript JSX |          9 |          0 |          3 |         12 |
+| d:\Code\homestays-search-engine\fe\src\services\userService.jsx               | JavaScript JSX |         63 |          0 |          2 |         65 |
+| d:\Code\homestays-search-engine\fe\src\utils\constant.js                      | JavaScript     |         46 |          0 |          4 |         50 |
+| d:\Code\homestays-search-engine\fe\src\utils\token.js                         | JavaScript     |         27 |          6 |          8 |         41 |
+| Total                                                                         |                |     31,837 |         23 |        369 |     32,229 |
++-------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
